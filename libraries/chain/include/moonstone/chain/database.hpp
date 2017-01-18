@@ -328,6 +328,7 @@ namespace moonstone { namespace chain {
          //////////////////// db_market.cpp ////////////////////
 
          /// @{ @group Market Helpers
+         void update_settlement_price(const asset_object& mia);
          void globally_settle_asset( const asset_object& smartasset, const price& settle_price );
          void cancel_order(const force_settlement_object& order, bool create_virtual_op = true);
          void cancel_order(const limit_order_object& order, bool create_virtual_op = true);

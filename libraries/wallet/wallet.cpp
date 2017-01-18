@@ -1299,6 +1299,7 @@ public:
                                    string symbol,
                                    bool broadcast /* = false */)
    { try {
+      FC_THROW("Asset settlement is disabled!");
       optional<asset_object> asset_to_settle = find_asset(symbol);
       if (!asset_to_settle)
         FC_THROW("No asset with that symbol exists!");

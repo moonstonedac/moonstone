@@ -201,6 +201,8 @@ bool database::check_for_blackswan( const asset_object& mia, bool enable_black_s
 {
     if( !mia.is_market_issued() ) return false;
 
+    update_settlement_price(mia);
+
     const asset_smartasset_data_object& smartasset = mia.smartasset_data(*this);
     if( smartasset.has_settlement() ) return true; // already force settled
     auto settle_price = smartasset.current_feed.settlement_price;
