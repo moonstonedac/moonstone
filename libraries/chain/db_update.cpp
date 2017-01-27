@@ -438,6 +438,8 @@ void database::update_feeds()
 
       update_settlement_price(a);
       
+      const asset_smartasset_data_object& b = a.smartasset_data(*this);      
+      
       if( !b.current_feed.core_exchange_rate.is_null() &&
           a.options.core_exchange_rate != b.current_feed.core_exchange_rate )
          modify(a, [&b](asset_object& a) {
